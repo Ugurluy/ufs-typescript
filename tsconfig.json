@@ -6,14 +6,17 @@
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "experimentalDecorators": true,
-    "skipLibCheck": true,
+    "strictPropertyInitialization": false,
     "esModuleInterop": true,
+    "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "vuetify"
     ],
     "paths": {
       "@/*": [
@@ -26,6 +29,18 @@
       "dom.iterable",
       "scripthost"
     ]
+  },
+  "typeRoots": [
+    "./node_modules/@types",
+    "./node_modules/vuetify/types"
+  ],
+  "typedocOptions": {
+    "mode": "modules",
+    "theme": "markdown",
+    "exclude": [
+      "node_modules"
+    ],
+    "out": "docs"
   },
   "include": [
     "src/**/*.ts",

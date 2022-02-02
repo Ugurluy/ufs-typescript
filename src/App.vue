@@ -1,32 +1,47 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app app>
+    <v-app-bar app color="primary darken-1">
+      <v-avatar class="ml-0" color="white darken-3" size="52">UFS</v-avatar>
+
+      <v-spacer></v-spacer>
+      
+      <!-- <v-responsive class="mr-5" max-width="260">
+        <v-text-field
+          color="black darken-4"
+          dense
+          flat
+          hide-details
+          rounded
+          solo-inverted
+        ></v-text-field>
+      </v-responsive> -->
+    </v-app-bar>
+    <v-main>
+      <v-row class="ml-2 mr-2">        
+        <!-- <Filters /> -->
+        <v-col cols="12">
+          <router-view />
+        </v-col>       
+      </v-row>
+    </v-main>
+    <Footer />
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+// import Header from "./components/Header.vue";
+// import LeftBar from "./components/LeftBar.vue";
+import Filters from "./components/Filters.vue";
+import Footer from "./components/Footer.vue";
+import Tab from "./components/Tab.vue";
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+@Component({
+  components: { 
+    Filters,
+    Footer,
+    Tab,
+   },
+})
+export default class App extends Vue {}
+</script>

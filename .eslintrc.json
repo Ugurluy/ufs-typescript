@@ -1,0 +1,65 @@
+{
+    "root": true,
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true,
+      "mocha": true
+    },
+    "extends": [
+      "plugin:vue/strongly-recommended",
+      "plugin:vue/essential",
+      "@vue/standard",
+      "@vue/typescript/recommended",
+      "prettier/@typescript-eslint",
+      "prettier",
+      "@vue/prettier"
+    ],
+    "parserOptions": {
+      "parser": "@typescript-eslint/parser",
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "legacyDecorators": true,
+        "experimentalObjectRestSpread": true
+      }
+    },
+    "plugins": [
+      "babel",
+      "vue"
+    ],
+    "rules": {
+      "semi": "off",
+      "quotes": [
+        "error",
+        "double",
+        {
+          "allowTemplateLiterals": false
+        }
+      ],
+      "@typescript-eslint/no-inferable-types": [
+        2,
+        {
+          "ignoreParameters": true
+        }
+      ],
+      "dot-notation": "off",
+      "space-before-function-paren": "off",
+      "@typescript-eslint/no-var-requires": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-this-alias": "off",
+      "@typescript-eslint/consistent-type-assertions": "off",
+      "@typescript-eslint/camelcase": "off",
+      "vue/no-use-v-if-with-v-for": "off",
+      "vue/html-self-closing": "off",
+      "vue/max-attributes-per-line": "off",
+      "vue/singleline-html-element-content-newline": "off",
+      "vue/multiline-html-element-content-newline": "off"
+    },
+    "globals": {
+      "browser": true
+    }
+  }

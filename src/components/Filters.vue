@@ -1,58 +1,50 @@
 <template>
-  <v-col cols="3" sm="12" md="3">
-    <v-list color="transparent">
-      <v-text-field
-        :items="customers"
-        v-model="customer.title"
-        placeholder="Terapi Numarası"
-        outlined
+  <div>
+    <v-text-field label="Sipariş No" v-model="orderNo" outlined></v-text-field>
+    <v-text-field label="Müşteri" v-model="client" outlined></v-text-field>
+    <DatePicker />
+    <v-col class="text-right">
+      <v-btn
+        class="ml-4 mt-3"
+        @click="filterForOrder"
         rounded
-      ></v-text-field>
-
-      <v-text-field
-        :items="customers"
-        v-model="customer.title"
-        placeholder="Müşteri"
-        outlined
-        rounded
-      ></v-text-field>
-    
-      <v-date-picker
-        color="grey darken-1"
-        v-model="dates"
-        range
-      ></v-date-picker>
-
-      <v-text-field
-        v-model="dateRangeText"
-        label="Date range"
-        prepend-icon="mdi-calendar"
-        readonly
-      ></v-text-field>
-    
-      
-    </v-list>
-  </v-col>
+        dark
+        color="blue darken-3"
+      >
+        Filtrele
+      </v-btn></v-col
+    >
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import DatePicker from "@/components/DatePicker.vue";
+import FormRepo from "@/repositories/FormRepo";
+import Forms from "@/models/Forms";
 
-@Component
+@Component({
+  components: { DatePicker },
+})
 export default class Filters extends Vue {
+  @Prop({ required: false }) orderNo: string = "";
+  @Prop({ required: false }) client: string = "";
+
   name: string;
   dates: Date[];
-  customer: string;
   customers: string[];
+  orders: Forms[];
 
-  constructor() {
-    super();
-    this.name = "Tarih";
-    this.dates = [];
-    this.customer = "";
-    this.customers = ["Fiat", "Ford", "Mercedes", "Mirka", "Car-System"];
+  created() {
+    this.filterForOrder();
   }
 
+  async filterForOrder() {
+    if (this.orderNo) {
+      const response: any = await FormRepo.getByOrderNo(this.orderNo);
+      this.orders = response.data;
+    }
+  }
   // /**
   //  * @description multiple date selection
   //  * @param {any} dates: date to select

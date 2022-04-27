@@ -1,7 +1,7 @@
 import Vue from "vue";
-import VueRouter, { RouteConfig } from "vue-router";
+import VueRouter from "vue-router";
 
-import Home from "../views/Home.vue";
+import HomeComp from "../components/HomeComp.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import DesiParca from "../views/forms/DesiParca.vue";
@@ -19,88 +19,93 @@ import Yapistirma from "../views/forms/Yapistirma.vue";
 
 Vue.use(VueRouter);
 
-const routes: Array<RouteConfig> = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: Login
-  },
-  {
-    path: "/register",
-    name: "Register",
-    component: Register
-  },
-  {
-    path:"/desiparca",
-    name: "DesiParca",
-    component: DesiParca
-  },
-  {
-    path:"/dikis",
-    name: "Dikis",
-    component: Dikis
-  },
-  {
-    path:"/eklikece",
-    name: "EkliKece",
-    component: EkliKece
-  },
-  {
-    path:"/haritalama",
-    name: "Haritalama",
-    component: Haritalama
-  },
-  {
-    path:"/hookandloop",
-    name: "HookandLoop",
-    component: HookandLoop
-  },
-  {
-    path:"/iskartatakip",
-    name: "IskartaTakip",
-    component: IskartaTakip
-  },
-  {
-    path:"/izbasim",
-    name: "IzBasim",
-    component: IzBasim
-  },
-  {
-    path:"/kalitekontrol",
-    name: "KaliteKontrol",
-    component: KaliteKontrol
-  },
-  {
-    path:"/kesim",
-    name: "Kesim",
-    component: Kesim
-  },
-  {
-    path:"/kirpimutu",
-    name: "KirpimUtu",
-    component: KirpimUtu
-  },
-  {
-    path:"/stokambalaj",
-    name: "StokAmbalaj",
-    component: StokAmbalaj
-  },
-  {
-    path:"/yapistirma",
-    name: "Yapistirma",
-    component: Yapistirma
-  },
-];
-
 const router = new VueRouter({
   mode: "history",
-  base: process.env.BASE_URL,
-  routes
+  routes: [
+    {
+      path: "/",
+      name: "Home",
+      component: HomeComp,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/login",
+      name: "Login",
+      component: Login,
+    },
+    {
+      path: "/desiparca",
+      name: "DesiParca",
+      component: DesiParca,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/dikis",
+      name: "Dikis",
+      component: Dikis,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/eklikece",
+      name: "EkliKece",
+      component: EkliKece,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/haritalama",
+      name: "Haritalama",
+      component: Haritalama,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/iskartatakip",
+      name: "IskartaTakip",
+      component: IskartaTakip,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/hookandloop",
+      name: "HookandLoop",
+      component: HookandLoop,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/izbasim",
+      name: "IzBasim",
+      component: IzBasim,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/kalitekontrol",
+      name: "KaliteKontrol",
+      component: KaliteKontrol,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/kesim",
+      name: "Kesim",
+      component: Kesim,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/kirpimutu",
+      name: "KirpimUtu",
+      component: KirpimUtu,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/stokambalaj",
+      name: "StokAmbalaj",
+      component: StokAmbalaj,
+      // meta:{ requiresAuth: true }
+    },
+    {
+      path: "/yapistirma",
+      name: "Yapistirma",
+      component: Yapistirma,
+      // meta:{ requiresAuth: true }
+    },
+  ],
 });
 
 export default router;

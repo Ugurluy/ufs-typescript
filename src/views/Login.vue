@@ -1,8 +1,5 @@
 <template>
-  
-    <v-sheet class="grey darken-2">
-
-    
+  <v-sheet class="grey darken-2">
     <v-card width="400" class="mx-auto mt-5">
       <v-card-title>
         <h1 class="display-1">Giriş</h1>
@@ -11,7 +8,7 @@
         <ValidationObserver ref="refLogin" v-slot="{ handleSubmit }">
           <v-form id="login-form" @submit.prevent="handleSubmit(onSubmit)">
             <ValidationProvider
-              style="color:red"
+              style="color: red"
               name="Name"
               v-slot="{ errors }"
               rules="required"
@@ -25,7 +22,7 @@
               <span>{{ errors[0] }}</span>
             </ValidationProvider>
             <ValidationProvider
-              style="color:red"
+              style="color: red"
               name="Password"
               v-slot="{ errors }"
               rules="required"
@@ -51,8 +48,7 @@
         <v-btn text rounded to="/register">Yeni Hesap</v-btn>
       </v-card-actions>
     </v-card>
-    </v-sheet>
-  
+  </v-sheet>
 </template>
 
 <script lang="ts">
@@ -77,11 +73,11 @@ export default class Login extends Vue {
   }
 
   onSubmit(): void {
-    this.$refs.refLogin["validate"]().then(success => {
-      if (success) {
-        this.onLogin();
-      }
-    });
+    // this.$refs.refLogin["validate"]().then((success) => {
+    //   if (success) {
+    //     this.onLogin();
+    //   }
+    // });
   }
 
   async onLogin() {

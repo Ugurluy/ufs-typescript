@@ -8,7 +8,7 @@
         <ValidationObserver ref="refSignup" v-slot="{ handleSubmit }">
           <v-form id="signup-form" @submit.prevent="handleSubmit(onSubmit)">
             <ValidationProvider
-              style="color:red"
+              style="color: red"
               name="İsim"
               v-slot="{ errors }"
               rules="required"
@@ -22,7 +22,7 @@
               <span>{{ errors[0] }}</span>
             </ValidationProvider>
             <ValidationProvider
-              style="color:red"
+              style="color: red"
               name="Soyadı"
               v-slot="{ errors }"
               rules="required"
@@ -36,7 +36,7 @@
               <span>{{ errors[0] }}</span>
             </ValidationProvider>
             <ValidationProvider
-              style="color:red"
+              style="color: red"
               name="Email"
               v-slot="{ errors }"
               rules="required"
@@ -50,7 +50,7 @@
               <span>{{ errors[0] }}</span>
             </ValidationProvider>
             <ValidationProvider
-              style="color:red"
+              style="color: red"
               name="Yetki"
               v-slot="{ errors }"
               rules="required"
@@ -64,7 +64,7 @@
               <span>{{ errors[0] }}</span>
             </ValidationProvider>
             <ValidationProvider
-              style="color:red"
+              style="color: red"
               name="Şifre"
               v-slot="{ errors }"
               rules="required"
@@ -110,16 +110,16 @@ export default class Signup extends Vue {
       surname: "",
       email: "",
       role: "",
-      password: ""
+      password: "",
     });
   }
 
   onSubmit(): void {
-    this.$refs.refSignup["validate"]().then(success => {
-      if (success) {
-        this.onRegister();
-      }
-    });
+    // this.$refs.refSignup["validate"]().then(success => {
+    //   if (success) {
+    //     this.onRegister();
+    //   }
+    // });
   }
 
   public async onRegister() {

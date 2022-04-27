@@ -1,8 +1,4 @@
-export default class DikisForm {
-  // public recordId: number;
-  // public formID: number;
-  // public formAdi: string;
-  // public isEmri: number;
+export default class Forms {
   public OrderNo: string;
   public Client: string;
   public ItemName: string; // TODO: Çap içinde ayrı bir column a alınmali
@@ -14,10 +10,4 @@ export default class DikisForm {
   public StitchedPadQuantity: number;
   public AttachedPieceQuantity: number;
   public Note: string;
-  // public baslangicSaati: Date;
-  // public bitisSaati: Date;
-  // public onay: string;
-  // public operatorImza: string;
-  // public operatorAdi: string;
-  // public isDeleted: boolean;
 }

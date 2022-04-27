@@ -31,6 +31,7 @@
     ],
     "rules": {
       "semi": "off",
+      "spaced-comment": ["error", "always", { "exceptions": ["-", "+"] }],
       "quotes": [
         "error",
         "double",
@@ -38,10 +39,11 @@
           "allowTemplateLiterals": false
         }
       ],
-      "@typescript-eslint/no-inferable-types": [
+      "@typescript-eslint/no-inferrable-types": [
         2,
         {
-          "ignoreParameters": true
+          "ignoreParameters": true,
+          "ignoreProperties" : true
         }
       ],
       "dot-notation": "off",
